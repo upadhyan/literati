@@ -1,0 +1,6 @@
+data/
+target/
+__pycache__/
+*.so
+.venv/
+tree.png
