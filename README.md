@@ -1,4 +1,4 @@
-# Literati
+# Literati (NeurIPS 2026)
 
 This repo is the code for the paper "Literati: Towards Anytime Optimal Shape Generalized Trees via AO*": https://arxiv.org/abs/2609.09299. 
 
@@ -26,17 +26,9 @@ pip install .
 
 For development (rebuild in place after editing `src/`): `pip install maturin && maturin develop --release`.
 
-## Run
-
-Edit the settings at the top of `run.py` (`DATASET`, `DEPTH`, `MAX_ORDER`, `TIME_LIMIT`), then from this folder:
-
-```bash
-python run.py
-```
-
-It prints train/test accuracy and whether the tree is provably optimal, and saves `tree.png`.
-
 ## Usage
+
+`run.py` provides a simple example script demonstratinghow to use Literati. Edit the settings at the top of `run.py` (`DATASET`, `DEPTH`, `MAX_ORDER`, `TIME_LIMIT`, `LAMBDA_`, `ALPHA_`) to control the tree behavior. 
 
 ```python
 from literati import LiteratiClassifier
@@ -46,5 +38,3 @@ clf.fit(X_train, y_train)
 clf.predict(X_test)
 clf.is_solved()  # True if the tree is provably optimal
 ```
-
-Available dataset names are listed in `DataFactory_clf.fetch_function` in `data_utils.py`.
